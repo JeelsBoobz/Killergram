@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Killergram</string>
+    <string name="app_desc">Remove sponsored messages of Telegram. Also allows you to copy or save messages when "Restrict saving content" is enabled.</string>
+</resources>
