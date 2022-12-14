@@ -51,7 +51,7 @@ public class MainHook implements IXposedHookLoadPackage {
                     XposedBridge.hookAllMethods(UserConfigClass, "getMaxAccountCount", XC_MethodReplacement.returnConstant(999));
                     XposedBridge.hookAllMethods(UserConfigClass, "isPremium", XC_MethodReplacement.returnConstant(true));
                 }
-                if (hookPackages.contains("ir.ilmili.telegraph")) {
+                if (lpparam.packageName.equals("ir.ilmili.telegraph")) {
                     Class<?> DonateTelegraph = XposedHelpers.findClassIfExists("org.telegram.tgnet.ConnectionsManager", lpparam.classLoader);
                     if (DonateTelegraph != null) {
                         XposedBridge.hookAllMethods(DonateTelegraph, "native_expireFile", XC_MethodReplacement.returnConstant(false));
