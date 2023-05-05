@@ -17,7 +17,7 @@ android {
         variant.resValue "string", "app_version", variant.versionName
         variant.outputs.all { output ->
             if (variant.buildType.name == 'release') {
-                outputFileName = "Killergram_${defaultConfig.versionName}.apk"
+                outputFileName = "Killergram_${defaultConfig.versionName}_unsigned.apk"
             }
         }
     }
