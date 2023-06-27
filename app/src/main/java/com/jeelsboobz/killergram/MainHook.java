@@ -59,11 +59,11 @@ public class MainHook implements IXposedHookLoadPackage {
                         XposedBridge.hookAllMethods(DonateTelegraph, "native_removeInstance", XC_MethodReplacement.returnConstant(true));
                         XposedBridge.hookAllMethods(DonateTelegraph, "native_checkLicense", XC_MethodReplacement.returnConstant(true));
                     }
-                    Class<?> MessagesControllerTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.ha0", lpparam.classLoader);
+                    Class<?> MessagesControllerTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.ga0", lpparam.classLoader);
                     if (MessagesControllerTelegraph != null) {
                         XposedBridge.hookAllMethods(MessagesControllerTelegraph, "P9", XC_MethodReplacement.returnConstant(false));
                     }
-                    Class<?> MessagesControllerTelegraph2 = XposedHelpers.findClassIfExists("org.telegram.messenger.uu", lpparam.classLoader);
+                    Class<?> MessagesControllerTelegraph2 = XposedHelpers.findClassIfExists("org.telegram.messenger.tu", lpparam.classLoader);
                     if (MessagesControllerTelegraph2 != null) {
                         XposedBridge.hookAllMethods(MessagesControllerTelegraph2, "B", XC_MethodReplacement.returnConstant(false));
                     }
