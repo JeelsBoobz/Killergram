@@ -12,10 +12,15 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: gradle
+      - name: Sign with debug key
+        run: |
+          sed -i "27i signingConfig signingConfigs.debug" ./app/build.gradle
+          curl -so- https://raw.githubusercontent.com/artem-zinnatullin/RxJavaProGuardRules/master/rxjava-proguard-rules/proguard-rules.txt | tee -a ./app/proguard-rules.pro
+          cat ./app/proguard-rules.pro
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: bash ./gradlew assembleRelease
+        run: ./gradlew :app:assembleRelease
       - name: Checking release version
         id: version
         run: |
