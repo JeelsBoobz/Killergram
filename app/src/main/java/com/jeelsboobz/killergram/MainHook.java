@@ -63,13 +63,13 @@ public class MainHook implements IXposedHookLoadPackage {
                     }
                     Class<?> MessagesControllerTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.eb0", lpparam.classLoader);
                     if (MessagesControllerTelegraph != null) {
-                        XposedBridge.hookAllMethods(MessagesControllerTelegraph, "da", XC_MethodReplacement.returnConstant(false));
+                        XposedBridge.hookAllMethods(MessagesControllerTelegraph, "ia", XC_MethodReplacement.returnConstant(false));
                     }
                     Class<?> MessagesControllerTelegraph2 = XposedHelpers.findClassIfExists("org.telegram.messenger.hv", lpparam.classLoader);
                     if (MessagesControllerTelegraph2 != null) {
                         XposedBridge.hookAllMethods(MessagesControllerTelegraph2, "D", XC_MethodReplacement.returnConstant(false));
                     }
-                    Class<?> UserConfigTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.by0", lpparam.classLoader);
+                    Class<?> UserConfigTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.py0", lpparam.classLoader);
                     if (UserConfigTelegraph != null) {
                         XposedBridge.hookAllMethods(UserConfigTelegraph, "N", XC_MethodReplacement.returnConstant(true));
                     }
