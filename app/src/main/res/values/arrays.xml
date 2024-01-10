@@ -15,5 +15,6 @@
         <item>ellipi.messenger</item>
         <item>me.ninjagram.messenger</item>
         <item>ir.ilmili.telegraph</item>
+        <item>org.telegram.mdgram</item>
     </string-array>
 </resources>

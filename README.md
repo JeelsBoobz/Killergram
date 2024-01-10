@@ -23,6 +23,7 @@ Also allows you to copy or save messages when "Restrict saving content" is enabl
 - **OwlGram** it.owlgram.android
 - **Ninjagram** me.ninjagram.messenger
 - **Telegraph** ir.ilmili.telegraph
+- **MDGram** org.telegram.mdgram
 
 ## License
 
