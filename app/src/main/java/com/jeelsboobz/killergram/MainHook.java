@@ -51,7 +51,7 @@ public class MainHook implements IXposedHookLoadPackage {
                     XposedBridge.hookAllMethods(MessageObjectClass, "canForwardMessage", XC_MethodReplacement.returnConstant(true));
                 }
                 if (MessageObjectClass != null) {
-                    XposedBridge.hookAllMethods(MessageObjectClass, "isSecretMedia", XC_MethodReplacement.returnConstant(true));
+                    XposedBridge.hookAllMethods(MessageObjectClass, "isSecretMedia", XC_MethodReplacement.returnConstant(false));
                 }
                 Class<?> SharedConfigClass = XposedHelpers.findClassIfExists("org.telegram.messenger.SharedConfig", lpparam.classLoader);
                 if (SharedConfigClass != null) {
