@@ -43,6 +43,16 @@ public class MainHook implements IXposedHookLoadPackage {
                 if (chatUIActivityClass != null) {
                     XposedBridge.hookAllMethods(chatUIActivityClass, "addSponsoredMessages", XC_MethodReplacement.returnConstant(null));
                 }
+                if (chatUIActivityClass != null) {
+                    XposedBridge.hookAllMethods(chatUIActivityClass, "openForward", XC_MethodReplacement.returnConstant(true));
+                }
+                Class<?> MessageObjectClass = XposedHelpers.findClassIfExists("org.telegram.messenger.MessageObject", lpparam.classLoader);
+                if (MessageObjectClass != null) {
+                    XposedBridge.hookAllMethods(MessageObjectClass, "canForwardMessage", XC_MethodReplacement.returnConstant(true));
+                }
+                if (MessageObjectClass != null) {
+                    XposedBridge.hookAllMethods(MessageObjectClass, "isSecretMedia", XC_MethodReplacement.returnConstant(true));
+                }
                 Class<?> SharedConfigClass = XposedHelpers.findClassIfExists("org.telegram.messenger.SharedConfig", lpparam.classLoader);
                 if (SharedConfigClass != null) {
                     XposedBridge.hookAllMethods(SharedConfigClass, "getDevicePerformanceClass", XC_MethodReplacement.returnConstant(2));
