@@ -26,7 +26,7 @@ jobs:
         run: |
           echo ::set-output name=release_version::$(cat gradle.properties | grep appVerName | awk -F'=' '{print $2}')
       - name: Delete tag if exists
-        uses: dev-drprasad/delete-tag-and-release@v1.0.1
+        uses: dev-drprasad/delete-tag-and-release@v1.1
         with:
           delete_release: true
           tag_name: ${{ steps.version.outputs.release_version }}
