@@ -80,7 +80,7 @@ public class MainHook implements IXposedHookLoadPackage {
                     if (MessagesControllerTelegraph2 != null) {
                         XposedBridge.hookAllMethods(MessagesControllerTelegraph2, "E", XC_MethodReplacement.returnConstant(false));
                     }
-                    Class<?> UserConfigTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.kz0", lpparam.classLoader);
+                    Class<?> UserConfigTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.cH", lpparam.classLoader);
                     if (UserConfigTelegraph != null) {
                         XposedBridge.hookAllMethods(UserConfigTelegraph, "N", XC_MethodReplacement.returnConstant(true));
                     }
