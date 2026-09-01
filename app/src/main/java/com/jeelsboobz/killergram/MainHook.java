@@ -72,17 +72,17 @@ public class MainHook implements IXposedHookLoadPackage {
                         XposedBridge.hookAllMethods(DonateTelegraph, "native_removeInstance", XC_MethodReplacement.returnConstant(true));
                         XposedBridge.hookAllMethods(DonateTelegraph, "native_checkLicense", XC_MethodReplacement.returnConstant(true));
                     }
-                    Class<?> MessagesControllerTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.ub0", lpparam.classLoader);
+                    Class<?> MessagesControllerTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.cs", lpparam.classLoader);
                     if (MessagesControllerTelegraph != null) {
-                        XposedBridge.hookAllMethods(MessagesControllerTelegraph, "va", XC_MethodReplacement.returnConstant(false));
+                        XposedBridge.hookAllMethods(MessagesControllerTelegraph, "ke", XC_MethodReplacement.returnConstant(false));
                     }
-                    Class<?> MessagesControllerTelegraph2 = XposedHelpers.findClassIfExists("org.telegram.messenger.lv", lpparam.classLoader);
+                    Class<?> MessagesControllerTelegraph2 = XposedHelpers.findClassIfExists("org.telegram.messenger.zh", lpparam.classLoader);
                     if (MessagesControllerTelegraph2 != null) {
-                        XposedBridge.hookAllMethods(MessagesControllerTelegraph2, "E", XC_MethodReplacement.returnConstant(false));
+                        XposedBridge.hookAllMethods(MessagesControllerTelegraph2, "isSecretMedia", XC_MethodReplacement.returnConstant(false));
                     }
-                    Class<?> UserConfigTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.kz0", lpparam.classLoader);
+                    Class<?> UserConfigTelegraph = XposedHelpers.findClassIfExists("org.telegram.messenger.cH", lpparam.classLoader);
                     if (UserConfigTelegraph != null) {
-                        XposedBridge.hookAllMethods(UserConfigTelegraph, "N", XC_MethodReplacement.returnConstant(true));
+                        XposedBridge.hookAllMethods(UserConfigTelegraph, "E", XC_MethodReplacement.returnConstant(true));
                     }
                 }
             } catch (Throwable ignored) {
